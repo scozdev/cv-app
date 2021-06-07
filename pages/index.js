@@ -7,4 +7,3 @@ const Button = styled.div``
 
 export default function Home() {
   return <main></main>
-}
