@@ -6,6 +6,7 @@ import { useReactToPrint } from 'react-to-print'
 import styled from 'styled-components'
 
 import Header from '../components/Header'
+import Main from '../components/Main'
 
 function Home() {
   const componentRef = useRef()
@@ -16,7 +17,7 @@ function Home() {
     <>
       <Header handlePrint={handlePrint} />
       <MainWrapper ref={componentRef}>
-        
+        <Main />
       </MainWrapper>
     </>
   )
