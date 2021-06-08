@@ -1,16 +1,26 @@
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
+import { useEffect } from 'react'
 import styled from 'styled-components'
 
 import ProfileImage from './ProfileImage'
-import { MailIcon, PhoneIcon } from '../components/svgs'
+import { MailIcon, PhoneIcon } from './svgs'
 import Text from './Text'
 
 function Main({ ...props }) {
+  const [skillCounter, SkillCounter] = useState(1)
+  const [experienceCounter, setExperienceCounter] = useState(1)
+
   useEffect(() => {
-    const inputRef = document.querySelector('.main__header-name')
-    inputRef.focus()
+    const refNameInput = document.querySelector('.main__header-name')
+    refNameInput.focus()
   }, [])
 
+  const handleAddClick = e => {
+    SkillCounter(skillCounter + 1)
+  }
+  const handleAddExperience = e => {
+    setExperienceCounter(experienceCounter + 1)
+  }
   return (
     <Wrapper {...props}>
       <div className='main__header'>
@@ -47,14 +57,38 @@ function Main({ ...props }) {
           </div>
         </div>
         <div className='work'>
-          <div className='profile__box'>
+          <div style={{ position: 'relative' }} className='experience-con'>
             <Text title placeholder='Work Experience' />
-            <Text placeholder='Position' />
-            <Text placeholder='In this text field your can describe your duties. Try to focus on accomplishments that serve as concrete examples to the type of problems you can solve to your future employer.' />
+            <button className='add-btn' onClick={handleAddExperience}>
+              +
+            </button>
+            {new Array(experienceCounter).fill(1).map((_, idx) => (
+              <div key={idx}>
+                <Text placeholder='Position' className='text--3' />
+                <Text placeholder='In this text field your can describe your duties. Try to focus on accomplishments that serve as concrete examples to the type of problems you can solve to your future employer.' />
+              </div>
+            ))}
+          </div>
 
+          <div>
             <Text title placeholder='EDUCATION' />
-            <Text placeholder='Degree' />
+            <Text placeholder='Degree' className='text--3' />
             <Text placeholder='School' />
+          </div>
+
+          <div className='skill-con'>
+            <Text title placeholder='SKILLS' />
+            <button className='add-btn' onClick={handleAddClick}>
+              +
+            </button>
+            <div>
+              {new Array(skillCounter).fill(1).map((skill, idx) => (
+                <div key={idx}>
+                  <input type='range' id={idx} />
+                  <Text placeholder='Enter Skill' />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -68,7 +102,7 @@ const Wrapper = styled.main`
 
   padding: 10rem;
   /* min-height: 168.3779527559rem; */
-  height: 100rem;
+  /* height: 100rem; */
   width: 119.0551181102rem;
   background-color: #fff;
 
@@ -98,15 +132,15 @@ const Wrapper = styled.main`
 
   .main__content {
     display: flex;
-    margin: 2rem 0;
+    margin: 6rem 0;
 
     .profile {
       width: 25rem;
       margin-right: 6rem;
       flex-shrink: 0;
 
-      &__box {
-        margin-top: 2.4rem;
+      &__box:not(:first-child) {
+        margin-top: 4rem;
       }
 
       &__logo-box {
@@ -118,6 +152,59 @@ const Wrapper = styled.main`
 
     .work {
       flex: 1;
+      > div:not(:first-child) {
+        margin-top: 6rem;
+      }
+    }
+
+    .skill-con {
+      position: relative;
+
+      > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      > div > div {
+        p {
+          width: auto;
+          margin-right: 1rem;
+        }
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+    }
+    .skill-con:hover .add-btn {
+      opacity: 1;
+    }
+
+    .experience-con:hover .add-btn {
+      opacity: 1;
+    }
+    .experience-con .add-btn {
+      left: 20rem;
+    }
+    .add-btn {
+      border: 0;
+      outline: 0;
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
+      color: #fff;
+      font-size: 1.8rem;
+      background-color: #2ab96b;
+      position: absolute;
+      left: 10rem;
+      top: 0.9rem;
+      opacity: 0;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+    }
+
+    .text--3 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      line-height: 1.25;
     }
   }
 `
