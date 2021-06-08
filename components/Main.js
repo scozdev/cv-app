@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 
 import ProfileImage from './ProfileImage'
@@ -6,6 +6,11 @@ import { MailIcon, PhoneIcon } from '../components/svgs'
 import Text from './Text'
 
 function Main({ ...props }) {
+  useEffect(() => {
+    const inputRef = document.querySelector('.main__header-name')
+    inputRef.focus()
+  }, [])
+
   return (
     <Wrapper {...props}>
       <div className='main__header'>

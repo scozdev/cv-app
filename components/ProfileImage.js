@@ -74,11 +74,13 @@ const Wrapper = styled.article`
     text-align: center;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.3s ease-in;
-    color: #fff;
+    color: rgba(999, 999, 999, 0.8);
+    transition: all 0.2s ease-ease-in-out;
+    pointer-events: none;
   }
   :hover .image-hover {
     opacity: 1;
+    color: #fff;
   }
   :hover .image {
     opacity: 0.8;
@@ -102,6 +104,8 @@ const Wrapper = styled.article`
     background-size: cover;
     object-fit: cover;
     transition: opacity 0.3s ease-in;
+    transition: background-color 0.3s ease-in;
+    cursor: pointer;
   }
 `
 
