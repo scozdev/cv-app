@@ -7,6 +7,7 @@ import styled from 'styled-components'
 
 import Header from '../components/Header'
 import Main from '../components/Main'
+import { GithubIcon } from '../components/svgs'
 
 function Home() {
   const componentRef = useRef()
@@ -15,6 +16,7 @@ function Home() {
   })
   return (
     <>
+      <GithubIcon />
       <Header handlePrint={handlePrint} />
       <MainWrapper ref={componentRef}>
         <Main />
