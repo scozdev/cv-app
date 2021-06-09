@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 
 import { useRef } from 'react'
 import { useReactToPrint } from 'react-to-print'
@@ -16,6 +15,10 @@ function Home() {
   })
   return (
     <>
+    <Head>
+      <title>Free Cv Builder</title>
+      <meta name="description" content="Free Cv Builder App"></meta>
+    </Head>
       <GithubIcon />
       <Header handlePrint={handlePrint} />
       <MainWrapper ref={componentRef}>
