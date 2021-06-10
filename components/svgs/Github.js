@@ -12,7 +12,7 @@ const Github = () => (
       style={{
         fill: '#fff',
         color: '#000',
-        position: 'absolute',
+        position: 'fixed',
         top: '0',
         border: '0',
         right: '0',
