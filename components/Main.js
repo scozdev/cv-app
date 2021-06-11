@@ -64,7 +64,7 @@ function Main({ ...props }) {
             </button>
             {new Array(experienceCounter).fill(1).map((_, idx) => (
               <div key={idx}>
-                <Text placeholder='Position' className='text--3' />
+                <Text placeholder='Position' className='title--3' />
                 <Text placeholder='In this text field your can describe your duties. Try to focus on accomplishments that serve as concrete examples to the type of problems you can solve to your future employer.' />
               </div>
             ))}
@@ -72,7 +72,7 @@ function Main({ ...props }) {
 
           <div>
             <Text title placeholder='EDUCATION' />
-            <Text placeholder='Degree' className='text--3' />
+            <Text placeholder='Degree' className='title--3' />
             <Text placeholder='School' />
           </div>
 
@@ -203,7 +203,7 @@ const Wrapper = styled.main`
       cursor: pointer;
     }
 
-    .text--3 {
+    .title--3 {
       font-size: 1.8rem;
       font-weight: 600;
       line-height: 1.25;

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { DownIcon, PaletteIcon, TextDocumentIcon, FontSizeIcon } from './svgs'
 
-const colors = ['#3D8FE8', '#EF9636', '#4FC4A5', '#000', '#ccc']
+const colors = ['#6D5D4B', '#3D8FE8', '#EF9636', '#4FC4A5', '#000']
 const fonts = ['Poppins', 'sans-serif', 'Nunito', 'Merriweather', 'Inconsolata']
 const fontSizes = [1, 2, 3, 4, 5]
 
@@ -16,12 +16,12 @@ function Header({ handlePrint }) {
 
     var r = document.querySelector(':root')
     r.style.setProperty('--color-primary', currentColor)
-    r.style.setProperty('--text-2', currentColor)
 
     // ! ERROR PDF LIBRARY : Since the dom isn't reloaded in the change made with the css variable, the pdf doesn't show
     // ? solution
-    var titles = document.querySelectorAll('.title--2')
-    titles.forEach(t => {
+    var titles2 = document.querySelectorAll('.title--2')
+    var titles3 = document.querySelectorAll('.title--3')
+    ;[...titles2, ...titles3].forEach(t => {
       t.style.color = currentColor
     })
     var svgs = document.querySelectorAll('svg')
@@ -35,7 +35,7 @@ function Header({ handlePrint }) {
     // var r = document.querySelector(':root')
     // r.style.setProperty('--font', font)
     // setFontFamily(font)
-    // ! ERROR PDF
+    // ! ERROR PDF LIBRARY
     const allp = document.querySelectorAll('p')
     allp.forEach(p => {
       p.style.fontFamily = font
@@ -43,9 +43,10 @@ function Header({ handlePrint }) {
     // ! END
   }
   const handleFontSize = font => {
-    // ! ERROR PDF
+    // ! ERROR PDF LIBRARY
     const allp = document.querySelectorAll('p')
     const allptitle2 = document.querySelectorAll('p.title--2')
+    const allptitle3 = document.querySelectorAll('p.title--3')
     const pheader = document.querySelector('.main__header-name')
     const smalls = [1.25, 1.4, 1.8, 2, 2.25]
     const mids = [1.55, 1.8, 2, 2.25, 2.5]
@@ -54,7 +55,7 @@ function Header({ handlePrint }) {
       p.style.fontSize = `${smalls[font]}rem`
     })
 
-    allptitle2.forEach(p => {
+    ;[...allptitle2, ...allptitle3].forEach(p => {
       p.style.fontSize = `${mids[font]}rem`
     })
 

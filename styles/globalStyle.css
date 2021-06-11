@@ -37,14 +37,13 @@ html {
 }
 
 body {
-    /* margin: 0 auto; */
+    background-color: var(--color-primary);
+    color: var(--text-2);
     font-family: var(--font);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: var(--primary-text);
     font-weight: 400;
     line-height: 1.6;
-    background-color: var(--color-primary);
     overflow-x: hidden;
     transition: background .3s ease-in;
 }
