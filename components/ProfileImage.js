@@ -59,7 +59,7 @@ function ProfileImage({ ...props }) {
 const Wrapper = styled.article`
   height: 25rem;
   width: 25rem;
-  background-color: gray;
+  background-color: var(--color-grey-1);
   border-radius: 50%;
   overflow: hidden;
   position: relative;
@@ -75,13 +75,13 @@ const Wrapper = styled.article`
     text-align: center;
     align-items: center;
     justify-content: center;
-    color: rgba(999, 999, 999, 0.8);
+    color: var(--color-light-soft-1);
     transition: all 0.2s ease-ease-in-out;
     pointer-events: none;
   }
   :hover .image-hover {
     opacity: 1;
-    color: #fff;
+    color: var(--color-secondary);
   }
   :hover .image {
     opacity: 0.8;
