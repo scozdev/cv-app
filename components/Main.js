@@ -98,7 +98,6 @@ function Main({ ...props }) {
 
 const Wrapper = styled.main`
   padding: 10rem;
-  height: 100rem;
   width: 119.0551181102rem;
   background-color: var(--color-secondary);
 
@@ -209,34 +208,6 @@ const Wrapper = styled.main`
       font-weight: 600;
       line-height: 1.25;
     }
-  }
-
-  [contenteditable='true']:empty:before {
-    content: attr(placeholder);
-    display: block;
-    /* color: grey; */
-  }
-
-  .title--2 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: var(--text-2);
-  }
-
-  p {
-    display: block;
-    font-size: 1.4rem;
-    padding: 0.5rem;
-    word-break: break-all;
-    width: 100%;
-  }
-
-  p:focus {
-    background: var(--color-dark-soft-3);
-    border-radius: 0.5rem;
-    outline: 0;
   }
 `
 
