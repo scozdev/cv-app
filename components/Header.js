@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import styled from 'styled-components'
 
 import { DownIcon } from '../components/svgs'
@@ -57,4 +57,4 @@ const Wrapper = styled.header`
   }
 `
 
-export default Header
+export default memo(Header)

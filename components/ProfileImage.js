@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import styled, { css } from 'styled-components'
+import React, { memo, useEffect, useState } from 'react'
+import styled from 'styled-components'
+
 import { CameraIcon } from '../components/svgs'
 
 function ProfileImage({ ...props }) {
@@ -109,4 +110,4 @@ const Wrapper = styled.article`
   }
 `
 
-export default ProfileImage
+export default memo(ProfileImage)

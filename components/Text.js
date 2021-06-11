@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { memo } from "react"
+
 const Text = ({ title, ...props }) => {
   return (
     <p
@@ -7,9 +8,8 @@ const Text = ({ title, ...props }) => {
       contentEditable
       suppressContentEditableWarning
       spellCheck='false'
-      // placeholder='Your name'
     ></p>
   )
 }
 
-export default Text
+export default memo(Text)

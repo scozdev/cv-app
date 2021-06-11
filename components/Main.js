@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
 import { useEffect } from 'react'
 import styled from 'styled-components'
 
@@ -7,7 +7,7 @@ import { MailIcon, PhoneIcon } from './svgs'
 import Text from './Text'
 
 function Main({ ...props }) {
-  const [skillCounter, SkillCounter] = useState(1)
+  const [skillCounter, setSkillCounter] = useState(1)
   const [experienceCounter, setExperienceCounter] = useState(1)
 
   useEffect(() => {
@@ -16,7 +16,7 @@ function Main({ ...props }) {
   }, [])
 
   const handleAddClick = e => {
-    SkillCounter(skillCounter + 1)
+    setSkillCounter(skillCounter + 1)
   }
   const handleAddExperience = e => {
     setExperienceCounter(experienceCounter + 1)
@@ -209,4 +209,4 @@ const Wrapper = styled.main`
   }
 `
 
-export default Main
+export default memo(Main)
