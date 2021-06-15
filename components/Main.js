@@ -2,11 +2,15 @@ import React, { memo, useState } from 'react'
 import { useEffect } from 'react'
 import styled from 'styled-components'
 
+import { useTranslation } from 'next-i18next'
+
 import ProfileImage from './ProfileImage'
 import { MailIcon, PhoneIcon } from './svgs'
 import Text from './Text'
 
 function Main({ ...props }) {
+  const { t } = useTranslation('common')
+
   const [skillCounter, setSkillCounter] = useState(1)
   const [experienceCounter, setExperienceCounter] = useState(1)
 
@@ -26,58 +30,58 @@ function Main({ ...props }) {
       <div className='main__header'>
         <ProfileImage className='main__header-photo' />
         <div className='main__header-box'>
-          <Text className='main__header-name' placeholder='Your name' />
+          <Text className='main__header-name' placeholder={t('name')} />
           <Text
             className='main__header-sub-name title--2'
-            placeholder='Your Profession or sepeciality'
+            placeholder={t('profession')}
           />
         </div>
       </div>
       <div className='main__content'>
         <div className='profile'>
           <div className='profile__box'>
-            <Text title placeholder='Profile' />
-            <Text placeholder='Write here a paragraph about yourself' />
+            <Text title placeholder={t('profile')} />
+            <Text placeholder={t('profile-detail')} />
           </div>
           <div className='profile__box'>
-            <Text title placeholder='PERSONAL DETAILS' />
-            <Text title placeholder='Adress' />
-            <Text placeholder='Enter your address' />
+            <Text title placeholder={t('detail')} />
+            <Text title placeholder={t('adress')} />
+            <Text placeholder={t('enter-adress')} />
           </div>
           <div className='profile__box'>
-            <Text title>CONTACT</Text>
+            <Text title>{t('contant')}</Text>
             <div className='profile__logo-box'>
               <MailIcon />
-              <Text placeholder='Enter you email' />
+              <Text placeholder={t('enter-email')} />
             </div>
             <div className='profile__logo-box'>
               <PhoneIcon />
-              <Text placeholder='Enter your phone number' />
+              <Text placeholder={t('enter-phone')} />
             </div>
           </div>
         </div>
         <div className='work'>
           <div style={{ position: 'relative' }} className='experience-con'>
-            <Text title placeholder='Work Experience' />
+            <Text title placeholder={t('experience')} />
             <button className='add-btn' onClick={handleAddExperience}>
               +
             </button>
             {new Array(experienceCounter).fill(1).map((_, idx) => (
               <div key={idx}>
-                <Text placeholder='Position' className='title--3' />
-                <Text placeholder='In this text field your can describe your duties. Try to focus on accomplishments that serve as concrete examples to the type of problems you can solve to your future employer.' />
+                <Text placeholder={t('position')} className='title--3' />
+                <Text placeholder={t('osition-detail')} />
               </div>
             ))}
           </div>
 
           <div>
-            <Text title placeholder='EDUCATION' />
-            <Text placeholder='Degree' className='title--3' />
-            <Text placeholder='School' />
+            <Text title placeholder={t('education')} />
+            <Text placeholder={t('degree')} className='title--3' />
+            <Text placeholder={t('school')} />
           </div>
 
           <div className='skill-con'>
-            <Text title placeholder='SKILLS' />
+            <Text title placeholder={t('skills')} />
             <button className='add-btn' onClick={handleAddClick}>
               +
             </button>
@@ -85,7 +89,7 @@ function Main({ ...props }) {
               {new Array(skillCounter).fill(1).map((skill, idx) => (
                 <div key={idx}>
                   <input type='range' id={idx} />
-                  <Text placeholder='Enter Skill' />
+                  <Text placeholder={t('enter-skill')} />
                 </div>
               ))}
             </div>

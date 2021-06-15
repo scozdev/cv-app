@@ -1,9 +1,12 @@
 import React, { memo, useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { useTranslation } from 'next-i18next'
 
 import { CameraIcon } from '../components/svgs'
 
 function ProfileImage({ ...props }) {
+  const { t } = useTranslation('common')
+
   const [selectedFile, setSelectedFile] = useState('')
   const [preview, setPreview] = useState('')
 
@@ -49,7 +52,7 @@ function ProfileImage({ ...props }) {
           style={{ opacity: `${!preview ? 1 : ''}` }}
         >
           <CameraIcon />
-          SELECT YOUR PICTURE
+          {t('select-picture')}
         </div>
       </label>
     </Wrapper>

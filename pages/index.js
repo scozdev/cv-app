@@ -4,11 +4,16 @@ import { useRef } from 'react'
 import { useReactToPrint } from 'react-to-print'
 import styled from 'styled-components'
 
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+
 import Header from '../components/Header'
 import Main from '../components/Main'
 import { GithubIcon } from '../components/svgs'
 
 function Home() {
+  const { t } = useTranslation('common')
+
   const componentRef = useRef()
   const handlePrint = useReactToPrint({
     documentTitle: 'my-new-cv',
@@ -23,7 +28,7 @@ function Home() {
   return (
     <>
       <Head>
-        <title>Free Cv Builder</title>
+        <title>{t('h1')}</title>
         <meta name='description' content='Free Cv Builder App'></meta>
       </Head>
       <GithubIcon />
@@ -46,4 +51,10 @@ const MainWrapper = styled.div`
     margin-right: auto;
   }
 `
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common'])),
+  },
+})
 export default Home

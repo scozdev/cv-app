@@ -1,0 +1,23 @@
+{
+  "h1": "Free Cv Builder",
+  "change-locale": "Change locale",
+  "name": "Your name",
+  "profession": "Your Profession or sepeciality",
+  "profile": "Profile",
+  "profile-detail": "Write here a paragraph about yourself",
+  "detail": "PERSONAL DETAILS",
+  "adress": "Adress",
+  "enter-adress": "Enter your address",
+  "contant": "CONTACT",
+  "enter-email": "Enter you email",
+  "enter-phone": "Enter your phone number",
+  "experience": "Work Experience",
+  "position": "Position",
+  "position-detail": "In this text field your can describe your duties. Try to focus on accomplishments that serve as concrete examples to the type of problems you can solve to your future employer",
+  "education": "EDUCATION",
+  "degree": "Degree",
+  "school": "School",
+  "skills": "SKILLS",
+  "enter-skill": "Enter Skill",
+  "select-picture": "SELECT YOUR PICTURE"
+}

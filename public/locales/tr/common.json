@@ -1,0 +1,23 @@
+{
+  "h1": "Bedava Cv Oluşturucu",
+  "change-locale": "Change locale",
+  "name": "İsim",
+  "profession": "Mesleğiniz veya uzmanlığınız",
+  "profile": "Profil",
+  "profile-detail": "Buraya kendin hakkında bir paragraf yaz",
+  "detail": "KİŞİSEL DETAYLAR",
+  "adress": "Adres",
+  "enter-adress": "Adresinizi girin",
+  "contant": "İletişim",
+  "enter-email": "Email girin",
+  "enter-phone": "Telefon numaranızı girin",
+  "experience": "İş deneyimi",
+  "position": "Pozisyon",
+  "position-detail": "Bu metin alanında görevlerinizi tanımlayabilirsiniz. Gelecekteki işvereninize çözebileceğiniz sorun türlerine somut örnek teşkil eden başarılara odaklanmaya çalışın.",
+  "education": "EĞİTİM",
+  "degree": "Derece",
+  "school": "Okul",
+  "skills": "Yetenekler",
+  "enter-skill": "Yetenek girin",
+  "select-picture": "RESİMİNİZİ SEÇİN"
+}
