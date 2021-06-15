@@ -10,7 +10,7 @@
 
 ## UI
 
-### Home
+### Home Video
 
-![Home](screenshots/home-page.png)
+![Home](screenshots/video.gif)
 
