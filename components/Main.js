@@ -69,7 +69,7 @@ function Main({ ...props }) {
             {new Array(experienceCounter).fill(1).map((_, idx) => (
               <div key={idx}>
                 <Text placeholder={t('position')} className='title--3' />
-                <Text placeholder={t('osition-detail')} />
+                <Text placeholder={t('position-detail')} />
               </div>
             ))}
           </div>
